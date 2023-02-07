@@ -13,7 +13,7 @@
          dns_support: yes
          dns_hostnames: yes
          tenancy: default
-         stata: "{{state}}"
+         state: "{{state}}"
        register: vpcout
 
 
