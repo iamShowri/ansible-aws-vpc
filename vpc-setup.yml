@@ -115,16 +115,16 @@
              gateway_id: "{{igw_out.gateway_id}}"
        register: pubRT_out
 
-     - name: Create new nat gateway and allocate new ELP if a nat gateway does not yet exist in the
+     - name: Create new nat gateway and allocate new EIP if a nat gateway does not yet exist in the subnet
        ec2_vpc_nat_gateway:
          state: "{{state}}"
-         subnets: "{{pubsub1_out.subnet.id}}"
+         subnet_id: "{{pubsub1_out.subnet.id}}"
          wait: yes
          region: "{{ region }}"
          if_exist_do_not_create: true
        register: NATGW_out
 
-     - name: Set up private subnet route table
+     - name: Set up Private subnet route table
        ec2_vpc_route_table:
          vpc_id: "{{vpcout.vpc.id}}"
          region: "{{ region }}"
