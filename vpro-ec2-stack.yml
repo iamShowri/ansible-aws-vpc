@@ -30,7 +30,7 @@
         region: "{{region}}"
         vpc_id: "{{vpcid}}"
         rules:
-          - porto: tcp
+          - proto: tcp
             from_port: 80
             to_port: 80
             cidr_ip: 0.0.0.0/0
@@ -44,12 +44,12 @@
         vpc_id: "{{vpcid}}"
         purge_rules: no
         rules:
-          - porto: tcp
+          - proto: tcp
             from_port: 80
             to_port: 80
             group_id: "{{vproELBSG_out.group_id}}"
 
-          - porto: tcp
+          - proto: tcp
             from_port: 22
             to_port: 22
             group_id: "{{BastionSGid}}"
@@ -63,7 +63,7 @@
         vpc_id: "{{vpcid}}"
         purge_rules: no
         rules:
-          - porto: all
+          - proto: all
             group_id: "{{vproStackSG_out.group_id}}"
 
 
