@@ -29,7 +29,7 @@
         description: Allow port 80 from everywhere and all port within sg
         region: "{{region}}"
         vpc_id: "{{vpcid}}"
-        rule:
+        rules:
           - porto: tcp
             from_port: 80
             to_port: 80
@@ -43,7 +43,7 @@
         region: "{{region}}"
         vpc_id: "{{vpcid}}"
         purge_rules: no
-        rule:
+        rules:
           - porto: tcp
             from_port: 80
             to_port: 80
@@ -54,5 +54,17 @@
             to_port: 22
             group_id: "{{BastionSGid}}"
       register: vproStackSG_out
+
+    - name: Create Security Group with its own sg id
+      ec2_group:
+        name: vproStack-sg
+        description: Allow port 22 from everywhere and all port within sg
+        region: "{{region}}"
+        vpc_id: "{{vpcid}}"
+        purge_rules: no
+        rules:
+          - porto: all
+            group_id: "{{vproStackSG_out.group_id}}"
+
 
 
