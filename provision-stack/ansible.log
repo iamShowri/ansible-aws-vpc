@@ -1,0 +1,46 @@
+2023-02-17 19:24:53,660 p=9474 u=ubuntu n=ansible | PLAY [Generate artifact, copy artifact & sql file to files directory] **********
+2023-02-17 19:24:53,707 p=9474 u=ubuntu n=ansible | TASK [Gathering Facts] *********************************************************
+2023-02-17 19:24:55,127 p=9474 u=ubuntu n=ansible | ok: [localhost]
+2023-02-17 19:24:55,136 p=9474 u=ubuntu n=ansible | TASK [Install  jdk, maven, git] ************************************************
+2023-02-17 19:25:03,468 p=9474 u=ubuntu n=ansible | ok: [localhost] => (item=git)
+2023-02-17 19:25:41,341 p=9474 u=ubuntu n=ansible | changed: [localhost] => (item=openjdk-8-jdk)
+2023-02-17 19:25:50,381 p=9474 u=ubuntu n=ansible | changed: [localhost] => (item=maven)
+2023-02-17 19:25:50,396 p=9474 u=ubuntu n=ansible | TASK [Clone source code from github] *******************************************
+2023-02-17 19:25:54,778 p=9474 u=ubuntu n=ansible | changed: [localhost]
+2023-02-17 19:25:54,788 p=9474 u=ubuntu n=ansible | TASK [mvn install command to build artifact] ***********************************
+2023-02-17 19:26:36,828 p=9474 u=ubuntu n=ansible | changed: [localhost]
+2023-02-17 19:26:36,842 p=9474 u=ubuntu n=ansible | TASK [Copy artifacts to files directory] ***************************************
+2023-02-17 19:26:38,067 p=9474 u=ubuntu n=ansible | changed: [localhost] => (item=/home/ubuntu/ansible-aws-vpc/provision-stack/Vprofile-repo/target/vprofile-v2.war)
+2023-02-17 19:26:38,077 p=9474 u=ubuntu n=ansible | TASK [Copy SQL file to files directory] ****************************************
+2023-02-17 19:26:38,478 p=9474 u=ubuntu n=ansible | changed: [localhost]
+2023-02-17 19:26:38,481 p=9474 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2023-02-17 19:26:38,481 p=9474 u=ubuntu n=ansible | localhost                  : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-02-17 19:36:36,323 p=14530 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] ***
+2023-02-17 19:36:36,386 p=14530 u=ubuntu n=ansible | TASK [Gathering Facts] *********************************************************
+2023-02-17 19:36:38,436 p=14530 u=ubuntu n=ansible | ok: [cntl]
+2023-02-17 19:36:38,672 p=14530 u=ubuntu n=ansible | ok: [web01]
+2023-02-17 19:36:38,852 p=14530 u=ubuntu n=ansible | ok: [mc01]
+2023-02-17 19:36:39,116 p=14530 u=ubuntu n=ansible | ok: [rmq01]
+2023-02-17 19:36:39,198 p=14530 u=ubuntu n=ansible | ok: [app01]
+2023-02-17 19:36:40,645 p=14530 u=ubuntu n=ansible | ok: [db01]
+2023-02-17 19:36:40,656 p=14530 u=ubuntu n=ansible | TASK [Import VPC setup Variable] ***********************************************
+2023-02-17 19:36:40,710 p=14530 u=ubuntu n=ansible | ok: [cntl]
+2023-02-17 19:36:40,731 p=14530 u=ubuntu n=ansible | ok: [web01]
+2023-02-17 19:36:40,752 p=14530 u=ubuntu n=ansible | ok: [app01]
+2023-02-17 19:36:40,772 p=14530 u=ubuntu n=ansible | ok: [rmq01]
+2023-02-17 19:36:40,776 p=14530 u=ubuntu n=ansible | ok: [mc01]
+2023-02-17 19:36:40,784 p=14530 u=ubuntu n=ansible | ok: [db01]
+2023-02-17 19:36:40,792 p=14530 u=ubuntu n=ansible | TASK [Update hosts file for all the hosts] *************************************
+2023-02-17 19:36:41,768 p=14530 u=ubuntu n=ansible | changed: [app01]
+2023-02-17 19:36:41,769 p=14530 u=ubuntu n=ansible | changed: [web01]
+2023-02-17 19:36:41,770 p=14530 u=ubuntu n=ansible | changed: [mc01]
+2023-02-17 19:36:41,770 p=14530 u=ubuntu n=ansible | changed: [rmq01]
+2023-02-17 19:36:41,825 p=14530 u=ubuntu n=ansible | changed: [cntl]
+2023-02-17 19:36:42,095 p=14530 u=ubuntu n=ansible | changed: [db01]
+2023-02-17 19:36:42,099 p=14530 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2023-02-17 19:36:42,099 p=14530 u=ubuntu n=ansible | app01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-02-17 19:36:42,099 p=14530 u=ubuntu n=ansible | cntl                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-02-17 19:36:42,100 p=14530 u=ubuntu n=ansible | db01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-02-17 19:36:42,100 p=14530 u=ubuntu n=ansible | mc01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-02-17 19:36:42,100 p=14530 u=ubuntu n=ansible | rmq01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-02-17 19:36:42,101 p=14530 u=ubuntu n=ansible | web01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
